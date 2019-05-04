@@ -12,6 +12,7 @@
 </head>
 <body>
     <%@ page import="test_files.InputValidator" %>
+    <jsp:include page="TopMenu.jsp" flush="true" />
 
     <%
         String firstName = request.getParameter("first_name");

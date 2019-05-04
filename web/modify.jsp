@@ -13,6 +13,7 @@
     <title>Modify Reservation</title>
 </head>
 <body>
+<jsp:include page="TopMenu.jsp" flush="true" />
     <%
         InputValidator validator = InputValidator.getInstance();
         String email = (String)session.getAttribute("email");
@@ -33,14 +34,21 @@
     %>
 
     <form action="Reg.jsp" method="get">
-        First Name: <input type="text" name="first_name" value=<%= firstName%> >
-        <br />
-        Last Name: <input type="text" name="last_name" value=<%= lastName%>>
-        <br />
-        Email: <input type="text" name="email" value=<%= email%>>
-        <br />
-        Time Slot: <input type="datetime-local" name="slot"/>
-        <input type="submit" value="Save"/>
+        <table>
+            <tr>
+                <td align="right">First Name:</td> <td><input type="text" name="first_name" value=<%= firstName%>></td>
+            </tr>
+            <tr>
+                <td align="right">Last Name:</td> <td><input type="text" name="last_name" value=<%= lastName%>></td>
+            </tr>
+            <tr>
+                <td align="right">Email:</td> <td><input type="text" name="email" value=<%= email%>></td>
+            </tr>
+            <tr>
+                <td align="right">Time Slot:</td> <td><input type="datetime-local" name="slot"/></td>
+            <td><input type="submit" value="Submit"/></td>
+            </tr>
+        </table>
     </form>
 
 </body>

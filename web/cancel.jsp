@@ -14,6 +14,7 @@
     <title></title>
 </head>
 <body>
+<jsp:include page="TopMenu.jsp" flush="true" />
 
     <%
         InputValidator validator = InputValidator.getInstance();
@@ -23,12 +24,12 @@
             <%
         } else {
             %>
-                <h4>Booking failed.</h4>
+                <h4>Booking cancellation failed.</h4>
             <%
         }
     %>
 
-    <form action="index.jsp" >
+    <form action="regForm.jsp" >
         <input type="submit" name="Make New Booking"/>
     </form>
 
