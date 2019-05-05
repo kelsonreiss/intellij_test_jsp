@@ -9,6 +9,9 @@
 <html>
 <div class="logo" style="background-color:lightgray">
     <img src="images/logo.png" alt="Virtual Discovery Logo" style="float:left" width="40">
-    <p style="line-height:3">Virtual Discovery</p>
+    <table>
+        <tr><td><p style="line-height:3">Virtual Discovery</p></td><td colspan="4" /><td><a href="enterEmail.jsp">Access Lab</a></td></tr>
+    </table>
+
 </div>
 </html>

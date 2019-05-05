@@ -4,6 +4,7 @@ package test_files;
 import java.sql.SQLException;
 import java.sql.*;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -70,6 +71,42 @@ public class InputValidator {
         }
         enterBooking(firstName, lastName, email, dateTimeStr);
         return successMsg;
+    }
+
+    public int currentAccess(String email) {
+        try {
+            Connection connection = getConnection();
+            String query = "SELECT * FROM users WHERE email='" + email + "'";
+            Statement st = connection.createStatement();
+            ResultSet existing_booking = st.executeQuery(query);
+            if (existing_booking.next()){
+                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                Calendar cal1 = Calendar.getInstance();
+                cal1.setTime(new Date());
+                cal1.add(Calendar.HOUR_OF_DAY, 2);
+                Date now = cal1.getTime();
+                String dateTime = existing_booking.getObject("slot").toString();
+                Date bookingTime = df.parse(dateTime);
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(bookingTime);
+                cal.add(Calendar.HOUR_OF_DAY, 1);
+                Date hourForward = cal.getTime();
+                System.out.println(now);
+                System.out.println(bookingTime);
+                System.out.println(hourForward);
+                if (now.after(bookingTime) && now.before(hourForward)) {
+                    return 0;
+                }
+                else {
+                    return 1;
+                }
+            }
+
+        } catch (Exception e){
+            e.printStackTrace();
+            return 2;
+        }
+        return 2;
     }
 
     public boolean deleteRecord(String email){
