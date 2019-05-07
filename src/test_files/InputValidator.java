@@ -169,5 +169,30 @@ public class InputValidator {
         return true;
     }
 
+    public ResultSet getAllBookings(){
+        try{
+            Connection con = getConnection();
+            Statement st = con.createStatement();
+            return st.executeQuery("SELECT * FROM users");
+        } catch (SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public int numBookings(){
+        try {
+            ResultSet rs = getAllBookings();
+            int size = 0;
+            if (rs != null){
+                rs.last();
+                size = rs.getRow();
+            } return size;
+        } catch (SQLException e ){
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
 
 }
