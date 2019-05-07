@@ -14,7 +14,7 @@
   <body>
   <jsp:include page="TopMenu.jsp" flush="true" />
   <div class="content" style="clear:both">
-    <h1> "Register for a VRL appointment! </h1>
+    <h1> Register for a VRL appointment! </h1>
     <form action="Reg.jsp" method="get">
         <table>
             <tr>

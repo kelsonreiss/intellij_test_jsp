@@ -10,7 +10,13 @@
 <div class="logo" style="background-color:lightgray">
     <img src="images/logo.png" alt="Virtual Discovery Logo" style="float:left" width="40">
     <table>
-        <tr><td><p style="line-height:3">Virtual Discovery</p></td><td colspan="4" /><td><a href="enterEmail.jsp">Access Lab</a></td></tr>
+        <tr>
+            <td><p style="line-height:3">Virtual Discovery</p></td>
+            <td colspan="4" />
+            <td><a href="enterEmail.jsp">Access Lab</a></td>
+            <td colspan="4"/>
+            <td><a href="adminLogin.jsp">Admin Entry</a></td>
+        </tr>
     </table>
 
 </div>
