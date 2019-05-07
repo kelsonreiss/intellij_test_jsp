@@ -24,6 +24,9 @@ public class InputValidator {
     public static String timeConflictMsg = "This booking conflicts with an existing reservation at: ";
     public static String existingBookingMsg = "Booking already registered with this email at: ";
 
+    // Admin Password
+    public static String adminPassword = "PASSWORD";
+
     private InputValidator(){
     }
 
