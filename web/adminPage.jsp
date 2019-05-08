@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Administrator</title>
 </head>
 <body>
     <%@page import="test_files.InputValidator" %>
